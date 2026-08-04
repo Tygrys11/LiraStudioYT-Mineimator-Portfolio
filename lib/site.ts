@@ -1,10 +1,10 @@
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'YouTube', href: '/youtube' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-] as const
+  { label: "Home", href: "#home" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "YouTube", href: "#youtube" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+] as const;
 
 export const SOCIAL = {
   email: 'hello@lirastudio.com',
@@ -64,7 +64,7 @@ export const VIDEOS = [
   {
     title: '🩸Anger Percentage, DARKNESS AWAKENS… DEMON INSIDE RISES!🩸',
     image: '/Angry-Procentage.jpg',
-    views: '543 views',
+    views: '544 views',
     date: '1 year ago',
     href: 'https://www.youtube.com/watch?v=Jo0jVxS6xl4'
   },
