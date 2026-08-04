@@ -27,14 +27,14 @@ export function FeaturedAnimations() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative overflow-hidden rounded-3xl border border-border glass shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-4/3 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={`${project.title} — cinematic Minecraft animation still`}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-card via-card/20 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-xs font-medium uppercase tracking-wider text-foreground backdrop-blur-sm">
                   {project.category}
                 </span>

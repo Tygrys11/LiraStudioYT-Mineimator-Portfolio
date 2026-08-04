@@ -14,39 +14,46 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    const sections = NAV_LINKS.map((link) => ({
+      id: link.href,
+      element: document.querySelector(link.href) as HTMLElement | null,
+    }));
+
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
+
+      const scrollPosition = window.scrollY + 140;
+
+      let current = "#home";
+
+      for (const section of sections) {
+        if (!section.element) continue;
+
+        if (scrollPosition >= section.element.offsetTop) {
+          current = section.id;
+        }
+      }
+
+      setActiveSection(current);
     };
 
-    onScroll();
+    let ticking = false;
 
-    window.addEventListener("scroll", onScroll);
-
-    const sections = NAV_LINKS.map((link) =>
-      document.querySelector(link.href)
-    ).filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${(entry.target as HTMLElement).id}`);
-          }
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          onScroll();
+          ticking = false;
         });
-      },
-      {
-        threshold: 0.5,
-        rootMargin: "-100px 0px -50% 0px",
-      }
-    );
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -65,7 +72,7 @@ export function Navbar() {
             : "border border-transparent"
         )}
       >
-        <Link href="#" className="flex items-center gap-2.5">
+        <Link href="#home" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 ring-1 ring-primary/40">
             <Sparkles className="h-4 w-4 text-primary" />
           </span>
@@ -81,7 +88,6 @@ export function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  onClick={() => setActiveSection(link.href)}
                   className={cn(
                     "group relative isolate rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.15em] transition-colors",
                     active
@@ -91,12 +97,18 @@ export function Navbar() {
                 >
                   <span className="relative z-10">{link.label}</span>
 
-                  <span
-                    className={cn(
-                      "pointer-events-none absolute inset-0 -z-10 rounded-full bg-white/5 ring-1 ring-primary/30 origin-left transition-all duration-500 ease-out",
-                      active ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
-                    )}
-                  />
+                  {active && (
+                    <motion.span
+                      layoutId="active-nav"
+                      transition={{
+                        layout: {
+                          duration: 0.35,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      }}
+                      className="absolute inset-0 -z-10 rounded-full bg-white/5 ring-1 ring-primary/30"
+                    />
+                  )}
                 </a>
               </li>
             );

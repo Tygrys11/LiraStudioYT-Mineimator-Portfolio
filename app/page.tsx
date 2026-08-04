@@ -10,15 +10,15 @@ export default function HomePage() {
   return (
     <main className="relative overflow-hidden">
       
-      <section id="home" >
+      <section id="home">
         <Hero />
       </section>
 
-      <section id="portfolio" >
+      <section id="portfolio">
         <FeaturedAnimations />
       </section>
 
-      <section id="youtube" className="min-h-screen scroll-mt-24">
+      <section id="youtube" className="scroll-mt-28 min-h-screen">
         <YoutubeSection />
       </section>
 
