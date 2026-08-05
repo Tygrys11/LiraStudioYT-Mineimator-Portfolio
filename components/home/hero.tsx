@@ -150,13 +150,13 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.55 }}
           className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <GlowButton href="/portfolio" variant="primary" icon={<Sparkles className="h-4 w-4" />}>
+          <GlowButton href="#portfolio" variant="primary" icon={<Sparkles className="h-4 w-4" />}>
             Explore Animations
           </GlowButton>
           <GlowButton href="https://www.youtube.com/@Lira_StudioYT" target='_blank' variant="ember" icon={<Youtube className="h-4 w-4" />}>
             Watch YouTube
           </GlowButton>
-          <GlowButton href="/contact" variant="blossom" icon={<Play className="h-4 w-4" />}>
+          <GlowButton href="#contact" variant="blossom" icon={<Play className="h-4 w-4" />}>
             Create Together
           </GlowButton>
         </motion.div>
