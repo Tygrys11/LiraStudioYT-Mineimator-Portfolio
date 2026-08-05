@@ -88,9 +88,9 @@ export function ContactSection() {
 
       reset();
 
-      alert("Message sent!");
+      console.log("Message sent!");
     } catch {
-      alert("Something went wrong.");
+      console.log("Something went wrong.");
     }
   };
 
