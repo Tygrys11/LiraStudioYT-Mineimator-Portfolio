@@ -12,6 +12,10 @@ import { FaInstagram } from "react-icons/fa";
 import { SectionHeading } from "@/components/section-heading";
 import { SOCIAL } from "@/lib/site";
 
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 const CHANNELS = [
   {
     label: "Email",
@@ -40,6 +44,31 @@ const CHANNELS = [
 ];
 
 export function ContactSection() {
+  const contactSchema = z.object({
+    name: z
+      .string()
+      .min(2, "Name must contain at least 2 characters")
+      .max(50, "Name is too long"),
+
+    email: z.string().email("Enter a valid email address"),
+
+    subject: z.string().min(5, "Subject must contain at least 5 characters"),
+
+    message: z
+      .string()
+      .min(10, "Message must contain at least 10 characters")
+      .max(1000, "Message is too long"),
+  });
+
+  type ContactFormData = z.infer<typeof contactSchema>;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
   return (
     <section id="contact" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
@@ -93,6 +122,13 @@ export function ContactSection() {
 
           {/* RIGHT */}
           <motion.form
+            onSubmit={handleSubmit((data) => {
+              console.log(data);
+
+              // tutaj np. fetch do API
+
+              reset();
+            })}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -122,10 +158,17 @@ export function ContactSection() {
                   </label>
 
                   <input
+                    {...register("name")}
                     type="text"
                     placeholder="Your Name"
                     className="h-12 w-full rounded-xl border border-border bg-background/40 px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
+
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -134,10 +177,16 @@ export function ContactSection() {
                   </label>
 
                   <input
+                    {...register("email")}
                     type="email"
                     placeholder="your@email.com"
                     className="h-12 w-full rounded-xl border border-border bg-background/40 px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -147,10 +196,16 @@ export function ContactSection() {
                 </label>
 
                 <input
+                  {...register("subject")}
                   type="text"
                   placeholder="What would you like to work on?"
                   className="h-12 w-full rounded-xl border border-border bg-background/40 px-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
+                {errors.subject && (
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.subject.message}
+                  </p>
+                )}
               </div>
 
               <div className="mt-5">
@@ -159,10 +214,16 @@ export function ContactSection() {
                 </label>
 
                 <textarea
+                  {...register("message")}
                   rows={6}
                   placeholder="Tell me about your project, idea, or collaboration..."
                   className="w-full resize-none rounded-xl border border-border bg-background/40 p-4 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                 />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-500">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -174,9 +235,10 @@ export function ContactSection() {
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
                   type="submit"
-                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-medium text-primary-foreground transition-all hover:shadow-[0_0_40px_rgba(var(--primary),0.35)]"
+                  disabled={isSubmitting}
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-medium text-primary-foreground transition-all hover:shadow-[0_0_40px_rgba(var(--primary),0.35)] disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  <Send className="h-4 w-4 " />
+                  <Send className="h-4 w-4 "/>
                   Send Message
                 </motion.button>
               </div>
