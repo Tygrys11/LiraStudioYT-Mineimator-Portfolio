@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Sparkles, TvMinimalPlay as Youtube, MessageCircle, Mail } from 'lucide-react'
 import { NAV_LINKS, SOCIAL } from '@/lib/site'
+import { FaInstagram } from 'react-icons/fa6'
 
 export function Footer() {
   return (
@@ -55,13 +56,13 @@ export function Footer() {
                   <Youtube className="h-4 w-4" />
                 </a>
                 <a
-                  href={SOCIAL.discord}
+                  href={SOCIAL.instagram}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Discord"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-all hover:border-primary/50 hover:text-foreground"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <FaInstagram className="h-4 w-4" />
                 </a>
                 <a
                   href={`mailto:${SOCIAL.email}`}
