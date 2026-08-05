@@ -64,31 +64,31 @@ The project was built using:
 ![Hero Section](./public/screenshots/hero.png)
 
 <p align="center">
-  ✦ ────────────────────────── ✦
+  ✦ ──────────────────── ✦
 </p>
 
 ![Portfolio Section](./public/screenshots/portfolio.png)
 
 <p align="center">
-  ✦ ────────────────────────── ✦
+  ✦ ──────────────────── ✦
 </p>
 
 ![YouTube Section](./public/screenshots/youtube.png)
 
 <p align="center">
-  ✦ ────────────────────────── ✦
+  ✦ ──────────────────── ✦
 </p>
 
 ![About Section](./public/screenshots/about.png)
 
 <p align="center">
-  ✦ ────────────────────────── ✦
+  ✦ ──────────────────── ✦
 </p>
 
 ![Contact Section](./public/screenshots/contact.png)
 
 <p align="center">
-  ✦ ────────────────────────── ✦
+  ✦ ──────────────────── ✦
 </p>
 
 ![Footer](./public/screenshots/footer.png)
