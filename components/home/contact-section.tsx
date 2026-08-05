@@ -6,6 +6,7 @@ import {
   TvMinimalPlay as Youtube,
   ArrowUpRight,
   Send,
+  Loader2,
 } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 
@@ -61,6 +62,7 @@ export function ContactSection() {
   });
 
   type ContactFormData = z.infer<typeof contactSchema>;
+
   const {
     register,
     handleSubmit,
@@ -69,6 +71,29 @@ export function ContactSection() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
+
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error();
+      }
+
+      reset();
+
+      alert("Message sent!");
+    } catch {
+      alert("Something went wrong.");
+    }
+  };
+
   return (
     <section id="contact" className="relative py-28">
       <div className="mx-auto max-w-6xl px-6">
@@ -122,13 +147,7 @@ export function ContactSection() {
 
           {/* RIGHT */}
           <motion.form
-            onSubmit={handleSubmit((data) => {
-              console.log(data);
-
-              // tutaj np. fetch do API
-
-              reset();
-            })}
+            onSubmit={handleSubmit(onSubmit)}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -232,14 +251,19 @@ export function ContactSection() {
                 </p>
 
                 <motion.button
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
+                  whileHover={!isSubmitting ? { scale: 1.04 } : undefined}
+                  whileTap={!isSubmitting ? { scale: 0.97 } : undefined}
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-medium text-primary-foreground transition-all hover:shadow-[0_0_40px_rgba(var(--primary),0.35)] disabled:cursor-not-allowed disabled:opacity-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-3 font-medium text-primary-foreground transition-all hover:shadow-[0_0_40px_rgba(var(--primary),0.35)] disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  <Send className="h-4 w-4 "/>
-                  Send Message
+                  {isSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </motion.button>
               </div>
             </div>
