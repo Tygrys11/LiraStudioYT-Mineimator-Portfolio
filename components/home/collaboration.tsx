@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Sparkles } from 'lucide-react'
-import { GlowButton } from '@/components/glow-button'
-import { Particles } from '@/components/particles'
+import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
+import { GlowButton } from "@/components/glow-button";
+import { Particles } from "@/components/particles";
 
 export function Collaboration() {
   return (
@@ -11,7 +11,7 @@ export function Collaboration() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
+        viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7 }}
         className="relative mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-border glass px-6 py-20 text-center"
       >
@@ -30,17 +30,20 @@ export function Collaboration() {
             Let&apos;s build something unforgettable.
           </p>
           <div className="mt-10 flex justify-center">
-            <GlowButton
+            <a
               href="#contact"
-              variant="primary"
-              className="px-8 py-4 text-base"
-              icon={<Sparkles className="h-5 w-5" />}
             >
-              Start A Project
-            </GlowButton>
+              <GlowButton
+                variant="primary"
+                className=" cursor-pointer px-8 py-4 text-base"
+                icon={<Sparkles className="h-5 w-5" />}
+              >
+                Start A Project
+              </GlowButton>
+            </a>
           </div>
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

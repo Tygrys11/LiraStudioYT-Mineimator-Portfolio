@@ -117,14 +117,17 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <div className="hidden md:block">
-            <GlowButton
-              href="#contact"
-              variant="primary"
-              icon={<Sparkles className="h-4 w-4" />}
-            >
-              Create Together
-            </GlowButton>
+            <a href="#contact">
+              <GlowButton
+                variant="primary"
+                className="cursor-pointer"
+                icon={<Sparkles className="h-4 w-4" />}
+              >
+                Create Together
+              </GlowButton>
+            </a>
           </div>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
