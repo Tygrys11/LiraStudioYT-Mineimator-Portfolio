@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src="./public/preview.png" alt="LiraStudioYT Portfolio Preview" width="900"/>
+  <img src="./public/channels4_banner.jpg" alt="LiraStudioYT Portfolio Preview" width="95%"/>
 </p>
 
 <h3 align="center">
