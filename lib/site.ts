@@ -7,7 +7,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL = {
-  email: 'hello@lirastudio.com',
+  email: 'lira.studio.youtube@gmail.com',
   youtube: 'https://www.youtube.com/@Lira_StudioYT',
   discord: 'https://discord.com',
   instagram: 'https://www.instagram.com/lirastudiospeedrenders/',
