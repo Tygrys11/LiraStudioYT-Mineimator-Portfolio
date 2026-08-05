@@ -19,7 +19,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: 'Lira Studio — Cinematic Minecraft Animation',
+  title: 'Lira Studio - Cinematic Minecraft Animation',
   icons: {
     icon: '/icon.png',
   },
