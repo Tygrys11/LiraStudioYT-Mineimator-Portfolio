@@ -20,6 +20,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: 'Lira Studio — Cinematic Minecraft Animation',
+  icons: {
+    icon: '/icon.png',
+  },
   description:
     'Lira Studio creates cinematic Minecraft stories through animation. Mine-imator creator, YouTuber, building worlds, characters and stories.',
   generator: 'v0.app',
