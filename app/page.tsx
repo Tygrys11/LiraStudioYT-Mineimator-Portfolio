@@ -29,7 +29,7 @@ export default function HomePage() {
       <CreativeProcess />
       <Collaboration />
 
-      <section id="contact" className="min-h-screen scroll-mt-24">
+      <section id="contact">
         <ContactSection />
       </section>
     </main>

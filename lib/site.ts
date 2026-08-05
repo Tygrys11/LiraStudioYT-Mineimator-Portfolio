@@ -10,6 +10,7 @@ export const SOCIAL = {
   email: 'hello@lirastudio.com',
   youtube: 'https://www.youtube.com/@Lira_StudioYT',
   discord: 'https://discord.com',
+  instagram: 'https://www.instagram.com/lirastudiospeedrenders/',
   portfolio: '/portfolio',
 }
 
@@ -64,7 +65,7 @@ export const VIDEOS = [
   {
     title: '🩸Anger Percentage, DARKNESS AWAKENS… DEMON INSIDE RISES!🩸',
     image: '/Angry-Procentage.jpg',
-    views: '544 views',
+    views: '545 views',
     date: '1 year ago',
     href: 'https://www.youtube.com/watch?v=Jo0jVxS6xl4'
   },

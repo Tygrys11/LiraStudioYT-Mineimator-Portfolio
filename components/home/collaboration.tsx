@@ -31,7 +31,7 @@ export function Collaboration() {
           </p>
           <div className="mt-10 flex justify-center">
             <GlowButton
-              href="/contact"
+              href="#contact"
               variant="primary"
               className="px-8 py-4 text-base"
               icon={<Sparkles className="h-5 w-5" />}
