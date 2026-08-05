@@ -1,5 +1,5 @@
 <h1 align="center">
-  🎬 LiraStudioYT - Mineimator Portfolio 🎬
+  🎬 LiraStudioYT Mine-imator Portfolio 🎬
 </h1>
 
 <p align="center">
@@ -7,17 +7,17 @@
 </p>
 
 <h3 align="center">
-  Personal portfolio website created for a Minecraft animator and YouTube creator.
+  A personal portfolio website created for a Minecraft Animator and YouTube Content Creator.
 </h3>
 
 <p align="center">
-  Showcasing Mine-imator animations, creative projects, skills and digital work.
+ Showcasing Mine-imator animations, creative projects, skills, and digital artwork.
 </p>
 
 
 ## 🌐 Live Demo
 
-🔗 Website:
+🔗 Visit the website:
 
 # 📖 About The Project
 
@@ -27,7 +27,7 @@ The website focuses on:
 - 🎬 Mine-imator animations
 - 🎥 YouTube projects
 - 🖼️ Visual presentation
-- ✨ Modern user experience
+- ✨ Smooth and modern user experience
 - 📱 Responsive design
 
 
@@ -54,3 +54,68 @@ The project was built using:
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=for-the-badge&logo=tailwind-css)
 
 </div>
+
+<br>
+
+<h1 align="center">
+  📸 Screenshots 📸
+</h1>
+
+![Hero Section](./public/screenshots/hero.png)
+
+<p align="center">
+  ✦ ────────────────────────── ✦
+</p>
+
+![Portfolio Section](./public/screenshots/portfolio.png)
+
+<p align="center">
+  ✦ ────────────────────────── ✦
+</p>
+
+![YouTube Section](./public/screenshots/youtube.png)
+
+<p align="center">
+  ✦ ────────────────────────── ✦
+</p>
+
+![About Section](./public/screenshots/about.png)
+
+<p align="center">
+  ✦ ────────────────────────── ✦
+</p>
+
+![Contact Section](./public/screenshots/contact.png)
+
+<p align="center">
+  ✦ ────────────────────────── ✦
+</p>
+
+![Footer](./public/screenshots/footer.png)
+
+<br>
+
+## 👤 Creator
+
+<h3>Created by Lira Studio</h3>
+
+Minecraft animator and YouTube creator focused on creating cinematic Mine-imator animations.
+
+### Links
+
+🎬 YouTube  
+https://www.youtube.com/@Lira_StudioYT/
+
+🐙 GitHub  
+https://github.com/Tygrys11
+
+📸 Instagram  
+https://www.instagram.com/lirastudiospeedrenders/
+
+<br><br>
+
+---
+
+<p align="center">
+  Thanks for visiting my portfolio! 🎬✨
+</p>
