@@ -17,7 +17,7 @@
 
 ## 🌐 Live Demo
 
-🔗 Visit the website:
+🔗 Visit the website: https://lirastudioyt-mine-imator-portfolio.vercel.app/
 
 # 📖 About The Project
 
